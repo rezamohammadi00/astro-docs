@@ -1,0 +1,43 @@
+---
+//Layout components are used to provide reusable UI structures across pages, e.g., navigation bars and footers.
+// Layouts are Astro components, meaning we can compose them
+
+// Base layout components like Main.astro are a great place to have global properties such as global styles and custom fonts.
+import "../styles/global.css"
+
+interface Props {
+	title: string;
+}
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+		<meta name="generator" content={Astro.generator} />
+
+		<title>{title}</title>
+
+
+		<script is:inline>
+			// ...
+
+			//best location for to use <script is:inline> .
+		</script>
+	</head>
+	<body>
+		<!-- <Header/> -->
+		<main>
+			 <slot />  <!--To render the child elements of an Astro component, we must specify where to render these using a <slot /> element. -->
+		</main>
+		<!-- <Footer/> -->
+	</body>
+</html>
+
+
+<!-- Layout components are used to provide reusable UI structures across pages, e.g., navigation bars and footers. -->

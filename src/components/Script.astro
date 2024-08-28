@@ -1,0 +1,23 @@
+<!-- Capitalising component names  ->  whay ?  main NOT Main -->
+
+<div>
+  If a single Astro component with a script tag is used multiple times on a
+  page, the script tag is processed and only included once.
+</div>
+
+<div>
+  Astro will process and insert the script in the head tag of the page with a
+  type=module attribute. The implication of type=module is that the browser will
+  defer the script, i.e., load in parallel and execute it only after the page’s
+  parsed.
+</div>
+
+<script>
+  // interactive scripts or client-side scripts
+
+  //tips of interactive script :
+  //The most crucial point is that Astro processes these. This means within a <script>, we can import other scripts or import npm packages, and Astro will resolve and package the script for use in the browser.
+  //NPM packages and local files can be imported and will be bundled
+  //valid:  <script src="path-to-script.js" />
+  //Another critical point is the <script> fully supports TypeScript.
+</script>

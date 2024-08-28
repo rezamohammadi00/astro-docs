@@ -1,0 +1,29 @@
+---
+
+// (اسکریپت هر کامپوننت یک اسکریپت جدا در هدر میشود و با ترتیب کدام یک در فرانتمتر اسکریپت صفحه مورد نظر اول ایمپورت شده است در اچ تی ام نهایی در هدر قرار میگیرند)
+// ex: C4 C3 C2
+
+
+import C4 from "../components/test/C4.astro"  // 1
+import C3 from "../components/test/C3.astro"  //2
+import C2 from "../components/test/C2.astro" //3
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <C4/>
+    <C2/>
+    <C3/>
+</body>
+</html>
+
+<!-- in console : 
+4
+3
+2 -->
